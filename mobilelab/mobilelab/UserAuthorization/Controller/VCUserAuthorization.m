@@ -8,6 +8,8 @@
 
 #import "VCUserAuthorization.h"
 #import "UserAuthorizationService.h"
+#import "Settings.h"
+#import "VCCategories.h"
 
 #import "NSString+MD5.h"
 
@@ -25,6 +27,7 @@
 
 @property (nonatomic, strong) UserAuthorizationService *service;
 @property (nonatomic) BOOL authorizationScreen;
+@property (nonatomic, strong) UINavigationController *navigation;
 
 @end
 
@@ -51,13 +54,16 @@
     }
     
     if (self.authorizationScreen) {
+        // authorization
         NSString *passwordHash = [password MD5String];
         NSString *savedPasswordHash = [self.service savedPasswordHash];
         if (![passwordHash isEqualToString:savedPasswordHash]) {
             [self showHint:hintUncorrectPassword];
             return;
         }
+        
     } else {
+        // registration
         NSString *repeatPassword = self.textFieldRepeatPassword.text;
         if (!repeatPassword.length) {
             [self showHint:hintEmptyField];
@@ -73,8 +79,14 @@
             return;
         }
         
-        
     }
+    
+    [Settings sharedInstance].sessionPassword = password;
+    VCCategories *vc = [VCCategories new];
+    self.navigation = [UINavigationController new];
+//    [self.navigation addChildViewController:vc];
+    [self.navigation setViewControllers:@[vc]];
+    [self presentViewController:self.navigation animated:NO completion:nil];
 }
 
 -(BOOL)isPasswordCorrect {

@@ -15,6 +15,11 @@
 		C38BC2892160C7E700E9D7D6 /* VCUserAuthorization.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2872160C7E700E9D7D6 /* VCUserAuthorization.xib */; };
 		C38BC28D2160CD0E00E9D7D6 /* UserAuthorizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC28C2160CD0E00E9D7D6 /* UserAuthorizationService.m */; };
 		C38BC2922160CF8D00E9D7D6 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC2912160CF8D00E9D7D6 /* NSString+MD5.m */; };
+		C3E55CE52160E84000779352 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E55CE42160E84000779352 /* Settings.m */; };
+		C3E55CEB2160EBEE00779352 /* VCCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E55CE92160EBEE00779352 /* VCCategories.m */; };
+		C3E55CEC2160EBEE00779352 /* VCCategories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E55CEA2160EBEE00779352 /* VCCategories.xib */; };
+		C3E55CF22160F22100779352 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E55CF02160F22100779352 /* CategoryCell.m */; };
+		C3E55CF32160F22100779352 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E55CF12160F22100779352 /* CategoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,14 @@
 		C38BC28C2160CD0E00E9D7D6 /* UserAuthorizationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAuthorizationService.m; sourceTree = "<group>"; };
 		C38BC2902160CF8D00E9D7D6 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		C38BC2912160CF8D00E9D7D6 /* NSString+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		C3E55CE32160E84000779352 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		C3E55CE42160E84000779352 /* Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		C3E55CE82160EBEE00779352 /* VCCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCCategories.h; sourceTree = "<group>"; };
+		C3E55CE92160EBEE00779352 /* VCCategories.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCCategories.m; sourceTree = "<group>"; };
+		C3E55CEA2160EBEE00779352 /* VCCategories.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCCategories.xib; sourceTree = "<group>"; };
+		C3E55CEF2160F22100779352 /* CategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		C3E55CF02160F22100779352 /* CategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		C3E55CF12160F22100779352 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +77,7 @@
 		C38BC26B2160C64F00E9D7D6 /* mobilelab */ = {
 			isa = PBXGroup;
 			children = (
+				C3E55CE62160E9EF00779352 /* ContentCategories */,
 				C38BC28E2160CF5E00E9D7D6 /* Categories */,
 				C38BC2832160C77500E9D7D6 /* UserAuthorization */,
 				C38BC2822160C6AE00E9D7D6 /* AppDelegate */,
@@ -87,20 +101,21 @@
 		C38BC2832160C77500E9D7D6 /* UserAuthorization */ = {
 			isa = PBXGroup;
 			children = (
+				C3E55CE22160E81200779352 /* Settings */,
 				C38BC28A2160CCE500E9D7D6 /* AuthorizationService */,
-				C38BC2842160C7B700E9D7D6 /* New Group */,
+				C38BC2842160C7B700E9D7D6 /* Controller */,
 			);
 			path = UserAuthorization;
 			sourceTree = "<group>";
 		};
-		C38BC2842160C7B700E9D7D6 /* New Group */ = {
+		C38BC2842160C7B700E9D7D6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				C38BC2852160C7E700E9D7D6 /* VCUserAuthorization.h */,
 				C38BC2862160C7E700E9D7D6 /* VCUserAuthorization.m */,
 				C38BC2872160C7E700E9D7D6 /* VCUserAuthorization.xib */,
 			);
-			path = "New Group";
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		C38BC28A2160CCE500E9D7D6 /* AuthorizationService */ = {
@@ -127,6 +142,44 @@
 				C38BC2912160CF8D00E9D7D6 /* NSString+MD5.m */,
 			);
 			path = NSString;
+			sourceTree = "<group>";
+		};
+		C3E55CE22160E81200779352 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C3E55CE32160E84000779352 /* Settings.h */,
+				C3E55CE42160E84000779352 /* Settings.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C3E55CE62160E9EF00779352 /* ContentCategories */ = {
+			isa = PBXGroup;
+			children = (
+				C3E55CE72160EBD300779352 /* Controller */,
+			);
+			path = ContentCategories;
+			sourceTree = "<group>";
+		};
+		C3E55CE72160EBD300779352 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C3E55CED2160F1E100779352 /* CategoryCell */,
+				C3E55CE82160EBEE00779352 /* VCCategories.h */,
+				C3E55CE92160EBEE00779352 /* VCCategories.m */,
+				C3E55CEA2160EBEE00779352 /* VCCategories.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C3E55CED2160F1E100779352 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				C3E55CEF2160F22100779352 /* CategoryCell.h */,
+				C3E55CF02160F22100779352 /* CategoryCell.m */,
+				C3E55CF12160F22100779352 /* CategoryCell.xib */,
+			);
+			path = CategoryCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +239,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E55CF32160F22100779352 /* CategoryCell.xib in Resources */,
+				C3E55CEC2160EBEE00779352 /* VCCategories.xib in Resources */,
 				C38BC2792160C64F00E9D7D6 /* LaunchScreen.storyboard in Resources */,
 				C38BC2892160C7E700E9D7D6 /* VCUserAuthorization.xib in Resources */,
 				C38BC2762160C64F00E9D7D6 /* Assets.xcassets in Resources */,
@@ -201,9 +256,12 @@
 			files = (
 				C38BC27C2160C64F00E9D7D6 /* main.m in Sources */,
 				C38BC26E2160C64F00E9D7D6 /* AppDelegate.m in Sources */,
+				C3E55CE52160E84000779352 /* Settings.m in Sources */,
+				C3E55CEB2160EBEE00779352 /* VCCategories.m in Sources */,
 				C38BC2922160CF8D00E9D7D6 /* NSString+MD5.m in Sources */,
 				C38BC28D2160CD0E00E9D7D6 /* UserAuthorizationService.m in Sources */,
 				C38BC2882160C7E700E9D7D6 /* VCUserAuthorization.m in Sources */,
+				C3E55CF22160F22100779352 /* CategoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
