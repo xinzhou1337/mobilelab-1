@@ -13,6 +13,8 @@
 		C38BC27C2160C64F00E9D7D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC27B2160C64F00E9D7D6 /* main.m */; };
 		C38BC2882160C7E700E9D7D6 /* VCUserAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC2862160C7E700E9D7D6 /* VCUserAuthorization.m */; };
 		C38BC2892160C7E700E9D7D6 /* VCUserAuthorization.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2872160C7E700E9D7D6 /* VCUserAuthorization.xib */; };
+		C38BC28D2160CD0E00E9D7D6 /* UserAuthorizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC28C2160CD0E00E9D7D6 /* UserAuthorizationService.m */; };
+		C38BC2922160CF8D00E9D7D6 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC2912160CF8D00E9D7D6 /* NSString+MD5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		C38BC2852160C7E700E9D7D6 /* VCUserAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCUserAuthorization.h; sourceTree = "<group>"; };
 		C38BC2862160C7E700E9D7D6 /* VCUserAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCUserAuthorization.m; sourceTree = "<group>"; };
 		C38BC2872160C7E700E9D7D6 /* VCUserAuthorization.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCUserAuthorization.xib; sourceTree = "<group>"; };
+		C38BC28B2160CD0E00E9D7D6 /* UserAuthorizationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAuthorizationService.h; sourceTree = "<group>"; };
+		C38BC28C2160CD0E00E9D7D6 /* UserAuthorizationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAuthorizationService.m; sourceTree = "<group>"; };
+		C38BC2902160CF8D00E9D7D6 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		C38BC2912160CF8D00E9D7D6 /* NSString+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		C38BC26B2160C64F00E9D7D6 /* mobilelab */ = {
 			isa = PBXGroup;
 			children = (
+				C38BC28E2160CF5E00E9D7D6 /* Categories */,
 				C38BC2832160C77500E9D7D6 /* UserAuthorization */,
 				C38BC2822160C6AE00E9D7D6 /* AppDelegate */,
 				C38BC2752160C64F00E9D7D6 /* Assets.xcassets */,
@@ -80,6 +87,7 @@
 		C38BC2832160C77500E9D7D6 /* UserAuthorization */ = {
 			isa = PBXGroup;
 			children = (
+				C38BC28A2160CCE500E9D7D6 /* AuthorizationService */,
 				C38BC2842160C7B700E9D7D6 /* New Group */,
 			);
 			path = UserAuthorization;
@@ -93,6 +101,32 @@
 				C38BC2872160C7E700E9D7D6 /* VCUserAuthorization.xib */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C38BC28A2160CCE500E9D7D6 /* AuthorizationService */ = {
+			isa = PBXGroup;
+			children = (
+				C38BC28B2160CD0E00E9D7D6 /* UserAuthorizationService.h */,
+				C38BC28C2160CD0E00E9D7D6 /* UserAuthorizationService.m */,
+			);
+			path = AuthorizationService;
+			sourceTree = "<group>";
+		};
+		C38BC28E2160CF5E00E9D7D6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C38BC28F2160CF7000E9D7D6 /* NSString */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C38BC28F2160CF7000E9D7D6 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				C38BC2902160CF8D00E9D7D6 /* NSString+MD5.h */,
+				C38BC2912160CF8D00E9D7D6 /* NSString+MD5.m */,
+			);
+			path = NSString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +201,8 @@
 			files = (
 				C38BC27C2160C64F00E9D7D6 /* main.m in Sources */,
 				C38BC26E2160C64F00E9D7D6 /* AppDelegate.m in Sources */,
+				C38BC2922160CF8D00E9D7D6 /* NSString+MD5.m in Sources */,
+				C38BC28D2160CD0E00E9D7D6 /* UserAuthorizationService.m in Sources */,
 				C38BC2882160C7E700E9D7D6 /* VCUserAuthorization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VCUserAuthorization.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [UIWindow new];
+    
+    self.window.rootViewController = [VCUserAuthorization new];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
