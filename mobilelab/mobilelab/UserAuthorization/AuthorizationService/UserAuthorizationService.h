@@ -12,7 +12,7 @@
 
 -(BOOL)userDataExists;
 -(NSString *)savedPasswordHash;
--(void)savePassword:(NSString *)password;
-
+-(BOOL)registerUser:(NSString *)password;
+-(NSString *)pathToDatabase;
 
 @end

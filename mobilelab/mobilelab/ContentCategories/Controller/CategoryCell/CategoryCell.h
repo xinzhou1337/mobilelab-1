@@ -11,5 +11,6 @@
 @interface CategoryCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property (weak, nonatomic) IBOutlet UIView *viewColor;
 
 @end

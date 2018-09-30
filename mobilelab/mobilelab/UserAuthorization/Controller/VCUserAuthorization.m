@@ -17,6 +17,7 @@
 #define hintPasswordsNotEqual @"Пароли не совпадают"
 #define hintUncorrectPassword @"Введен неверный пароль"
 #define hintUncorrectSymbols @"Пароль может содержать латинские буквы A-Z, a-z и цифры 0-9 и длиной не более 32 символов"
+#define hintRegisterFailure @"Не удалось зарегистрировать базу данных"
 
 @interface VCUserAuthorization ()
 
@@ -62,6 +63,8 @@
             return;
         }
         
+        
+        
     } else {
         // registration
         NSString *repeatPassword = self.textFieldRepeatPassword.text;
@@ -79,12 +82,18 @@
             return;
         }
         
+        if (![self.service registerUser:password]) {
+            [self showHint:hintRegisterFailure];
+            return;
+        }
+        
     }
     
-    [Settings sharedInstance].sessionPassword = password;
+    Settings *settings = [Settings sharedInstance];
+    settings.sessionPassword = password;
+    settings.pathToDatabase = [self.service pathToDatabase];
     VCCategories *vc = [VCCategories new];
     self.navigation = [UINavigationController new];
-//    [self.navigation addChildViewController:vc];
     [self.navigation setViewControllers:@[vc]];
     [self presentViewController:self.navigation animated:NO completion:nil];
 }

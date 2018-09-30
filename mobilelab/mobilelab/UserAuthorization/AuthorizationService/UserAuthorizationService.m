@@ -8,8 +8,10 @@
 
 #import "UserAuthorizationService.h"
 #import "NSString+MD5.h"
+#import <UIKit/UIKit.h>
 
 #define kUserPassword @"password"
+#define kDBPath @"dbPath"
 
 @implementation UserAuthorizationService
 
@@ -26,9 +28,21 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:kUserPassword];
 }
 
--(void)savePassword:(NSString *)password {
+-(BOOL)registerUser:(NSString *)password {
     NSString *hash = [self passwordHash:password];
     [[NSUserDefaults standardUserDefaults] setObject:hash forKey:kUserPassword];
+    NSDataAsset *db = [[NSDataAsset alloc] initWithName:@"passwordDB"];
+    NSString *path = [self pathToDatabase];
+    if (![db.data writeToFile:path atomically:YES]) {
+        return NO;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:path forKey: kDBPath];
+    return YES;
+}
+
+-(NSString *)pathToDatabase {
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+    return [path stringByAppendingPathComponent:@"passwordDB.db"];
 }
 
 @end

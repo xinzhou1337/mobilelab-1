@@ -11,6 +11,7 @@
 @interface Settings : NSObject
 
 @property (nonatomic, strong) NSString *sessionPassword;
+@property (nonatomic, strong) NSString *pathToDatabase;
 
 +(instancetype)sharedInstance;
 

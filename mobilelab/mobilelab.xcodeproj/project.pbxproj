@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C34DF89B216136C3000D775C /* CategoriesService.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF89A216136C3000D775C /* CategoriesService.m */; };
+		C34DF89F216139BC000D775C /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF89E216139BC000D775C /* Category.m */; };
 		C38BC26E2160C64F00E9D7D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC26D2160C64F00E9D7D6 /* AppDelegate.m */; };
 		C38BC2762160C64F00E9D7D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2752160C64F00E9D7D6 /* Assets.xcassets */; };
 		C38BC2792160C64F00E9D7D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2772160C64F00E9D7D6 /* LaunchScreen.storyboard */; };
@@ -20,9 +22,15 @@
 		C3E55CEC2160EBEE00779352 /* VCCategories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E55CEA2160EBEE00779352 /* VCCategories.xib */; };
 		C3E55CF22160F22100779352 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E55CF02160F22100779352 /* CategoryCell.m */; };
 		C3E55CF32160F22100779352 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E55CF12160F22100779352 /* CategoryCell.xib */; };
+		C3E55CF92160F8D900779352 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E55CF72160F8D900779352 /* libsqlite3.tbd */; };
+		C3E55CFA2160F8D900779352 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E55CF82160F8D900779352 /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C34DF899216136C3000D775C /* CategoriesService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesService.h; sourceTree = "<group>"; };
+		C34DF89A216136C3000D775C /* CategoriesService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesService.m; sourceTree = "<group>"; };
+		C34DF89D216139BC000D775C /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		C34DF89E216139BC000D775C /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		C38BC2692160C64F00E9D7D6 /* mobilelab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobilelab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38BC26C2160C64F00E9D7D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C38BC26D2160C64F00E9D7D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +53,9 @@
 		C3E55CEF2160F22100779352 /* CategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		C3E55CF02160F22100779352 /* CategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		C3E55CF12160F22100779352 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		C3E55CF52160F8B500779352 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3E55CF72160F8D900779352 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C3E55CF82160F8D900779352 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,17 +63,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E55CF92160F8D900779352 /* libsqlite3.tbd in Frameworks */,
+				C3E55CFA2160F8D900779352 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C34DF898216136A4000D775C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C34DF899216136C3000D775C /* CategoriesService.h */,
+				C34DF89A216136C3000D775C /* CategoriesService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C34DF89C216139A5000D775C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C34DF89D216139BC000D775C /* Category.h */,
+				C34DF89E216139BC000D775C /* Category.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C38BC2602160C64F00E9D7D6 = {
 			isa = PBXGroup;
 			children = (
 				C38BC26B2160C64F00E9D7D6 /* mobilelab */,
 				C38BC26A2160C64F00E9D7D6 /* Products */,
+				C3E55CF42160F8B500779352 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +188,8 @@
 		C3E55CE62160E9EF00779352 /* ContentCategories */ = {
 			isa = PBXGroup;
 			children = (
+				C34DF89C216139A5000D775C /* Model */,
+				C34DF898216136A4000D775C /* Service */,
 				C3E55CE72160EBD300779352 /* Controller */,
 			);
 			path = ContentCategories;
@@ -180,6 +214,16 @@
 				C3E55CF12160F22100779352 /* CategoryCell.xib */,
 			);
 			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		C3E55CF42160F8B500779352 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3E55CF82160F8D900779352 /* libsqlite3.0.tbd */,
+				C3E55CF72160F8D900779352 /* libsqlite3.tbd */,
+				C3E55CF52160F8B500779352 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +304,8 @@
 				C3E55CEB2160EBEE00779352 /* VCCategories.m in Sources */,
 				C38BC2922160CF8D00E9D7D6 /* NSString+MD5.m in Sources */,
 				C38BC28D2160CD0E00E9D7D6 /* UserAuthorizationService.m in Sources */,
+				C34DF89B216136C3000D775C /* CategoriesService.m in Sources */,
+				C34DF89F216139BC000D775C /* Category.m in Sources */,
 				C38BC2882160C7E700E9D7D6 /* VCUserAuthorization.m in Sources */,
 				C3E55CF22160F22100779352 /* CategoryCell.m in Sources */,
 			);

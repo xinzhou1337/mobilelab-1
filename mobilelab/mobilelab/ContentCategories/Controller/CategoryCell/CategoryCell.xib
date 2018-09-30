@@ -19,24 +19,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="288" height="153"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-m5-2M0">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="153"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KB3-fv-jT3">
+                        <rect key="frame" x="8" y="4" width="272" height="145"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-m5-2M0">
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="145"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ncq-m5-2M0" firstAttribute="top" secondItem="KB3-fv-jT3" secondAttribute="top" id="V4B-kJ-WNJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Ncq-m5-2M0" secondAttribute="bottom" id="WIo-fa-BnV"/>
+                            <constraint firstAttribute="trailing" secondItem="Ncq-m5-2M0" secondAttribute="trailing" id="ZU4-lh-jGO"/>
+                            <constraint firstItem="Ncq-m5-2M0" firstAttribute="leading" secondItem="KB3-fv-jT3" secondAttribute="leading" id="pcT-EQ-Gec"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Ncq-m5-2M0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7x2-rD-RSt"/>
-                <constraint firstAttribute="trailing" secondItem="Ncq-m5-2M0" secondAttribute="trailing" id="UrX-o6-GAh"/>
-                <constraint firstItem="Ncq-m5-2M0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WbB-r5-T9N"/>
-                <constraint firstAttribute="bottom" secondItem="Ncq-m5-2M0" secondAttribute="bottom" id="uMO-G3-48x"/>
+                <constraint firstAttribute="trailing" secondItem="KB3-fv-jT3" secondAttribute="trailing" constant="8" id="CO1-Nh-Rhk"/>
+                <constraint firstAttribute="bottom" secondItem="KB3-fv-jT3" secondAttribute="bottom" constant="4" id="djA-BW-wYI"/>
+                <constraint firstItem="KB3-fv-jT3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="o7e-no-ykc"/>
+                <constraint firstItem="KB3-fv-jT3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="tPc-1w-KjW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="288" height="153"/>
             <connections>
                 <outlet property="labelName" destination="Ncq-m5-2M0" id="o5s-u5-MFr"/>
+                <outlet property="viewColor" destination="KB3-fv-jT3" id="HGS-L6-WrK"/>
             </connections>
             <point key="canvasLocation" x="-80" y="-14"/>
         </collectionViewCell>
