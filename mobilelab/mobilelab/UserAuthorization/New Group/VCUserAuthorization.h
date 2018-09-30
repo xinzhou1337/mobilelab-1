@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VCUserAuthorization.h
 //  mobilelab
 //
 //  Created by Ilya Zimonin on 30/09/2018.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface VCUserAuthorization : UIViewController
 
 @end
-
