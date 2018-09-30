@@ -12,6 +12,7 @@
 #import "VCCategories.h"
 
 #import "NSString+MD5.h"
+#import "Theme.h"
 
 #define hintEmptyField @"Поле не может быть пустым"
 #define hintPasswordsNotEqual @"Пароли не совпадают"
@@ -94,6 +95,7 @@
     settings.pathToDatabase = [self.service pathToDatabase];
     VCCategories *vc = [VCCategories new];
     self.navigation = [UINavigationController new];
+    self.navigation.navigationBar.barTintColor = Colors.navigationBackground;
     [self.navigation setViewControllers:@[vc]];
     [self presentViewController:self.navigation animated:NO completion:nil];
 }

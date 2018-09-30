@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C34DF89B216136C3000D775C /* CategoriesService.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF89A216136C3000D775C /* CategoriesService.m */; };
 		C34DF89F216139BC000D775C /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF89E216139BC000D775C /* Category.m */; };
+		C34DF8A421614958000D775C /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF8A321614958000D775C /* Colors.m */; };
 		C38BC26E2160C64F00E9D7D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC26D2160C64F00E9D7D6 /* AppDelegate.m */; };
 		C38BC2762160C64F00E9D7D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2752160C64F00E9D7D6 /* Assets.xcassets */; };
 		C38BC2792160C64F00E9D7D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2772160C64F00E9D7D6 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,9 @@
 		C34DF89A216136C3000D775C /* CategoriesService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesService.m; sourceTree = "<group>"; };
 		C34DF89D216139BC000D775C /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		C34DF89E216139BC000D775C /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		C34DF8A221614958000D775C /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		C34DF8A321614958000D775C /* Colors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
+		C34DF8A62161498B000D775C /* Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		C38BC2692160C64F00E9D7D6 /* mobilelab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobilelab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38BC26C2160C64F00E9D7D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C38BC26D2160C64F00E9D7D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +93,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C34DF8A02161490E000D775C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C34DF8A121614948000D775C /* Colors */,
+				C34DF8A62161498B000D775C /* Theme.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		C34DF8A121614948000D775C /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				C34DF8A221614958000D775C /* Colors.h */,
+				C34DF8A321614958000D775C /* Colors.m */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		C38BC2602160C64F00E9D7D6 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +131,7 @@
 		C38BC26B2160C64F00E9D7D6 /* mobilelab */ = {
 			isa = PBXGroup;
 			children = (
+				C34DF8A02161490E000D775C /* Interface */,
 				C3E55CE62160E9EF00779352 /* ContentCategories */,
 				C38BC28E2160CF5E00E9D7D6 /* Categories */,
 				C38BC2832160C77500E9D7D6 /* UserAuthorization */,
@@ -305,6 +328,7 @@
 				C38BC2922160CF8D00E9D7D6 /* NSString+MD5.m in Sources */,
 				C38BC28D2160CD0E00E9D7D6 /* UserAuthorizationService.m in Sources */,
 				C34DF89B216136C3000D775C /* CategoriesService.m in Sources */,
+				C34DF8A421614958000D775C /* Colors.m in Sources */,
 				C34DF89F216139BC000D775C /* Category.m in Sources */,
 				C38BC2882160C7E700E9D7D6 /* VCUserAuthorization.m in Sources */,
 				C3E55CF22160F22100779352 /* CategoryCell.m in Sources */,
@@ -440,11 +464,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P47LQ252YK;
 				INFOPLIST_FILE = mobilelab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = bstu.mobilelab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,11 +482,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P47LQ252YK;
 				INFOPLIST_FILE = mobilelab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = bstu.mobilelab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
