@@ -7,8 +7,11 @@
 //
 
 #import "DefaultController.h"
+#import "MenuController.h"
 
 @interface DefaultController ()
+
+@property (nonatomic, strong) MenuController *menuController;
 
 @end
 
@@ -40,6 +43,24 @@
 
 -(void)initController {
     self.colors = [Colors new];
+}
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    if (self.navigationItem) {
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuBarButton"] style:UIBarButtonItemStylePlain target:self action:@selector(onMenuClick)];
+        self.navigationItem.rightBarButtonItem = item;
+        
+        self.menuController = [[MenuController alloc] init];
+        self.menuController.providesPresentationContextTransitionStyle = YES;
+        self.menuController.definesPresentationContext = YES;
+        self.menuController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    }
+}
+
+-(void)onMenuClick {
+    [self presentViewController:self.menuController animated:NO completion:nil];
 }
 
 @end

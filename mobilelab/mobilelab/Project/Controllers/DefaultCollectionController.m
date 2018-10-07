@@ -18,6 +18,8 @@
 @implementation DefaultCollectionController
 
 -(void)initController {
+    [super initController];
+    
     self.rowHeight = 44;
     self.minColumnCount = 1;
     self.minRowWidth = 999999;

@@ -27,6 +27,10 @@
 		C3E55CF32160F22100779352 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E55CF12160F22100779352 /* CategoryCell.xib */; };
 		C3E55CF92160F8D900779352 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E55CF72160F8D900779352 /* libsqlite3.tbd */; };
 		C3E55CFA2160F8D900779352 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E55CF82160F8D900779352 /* libsqlite3.0.tbd */; };
+		C3EF3A1D216A5B4F00D2AA0B /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF3A1B216A5B4F00D2AA0B /* MenuController.m */; };
+		C3EF3A1E216A5B4F00D2AA0B /* MenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3A1C216A5B4F00D2AA0B /* MenuController.xib */; };
+		C3EF3A23216A73A300D2AA0B /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF3A21216A73A300D2AA0B /* MenuCell.m */; };
+		C3EF3A24216A73A300D2AA0B /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3A22216A73A300D2AA0B /* MenuCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,12 @@
 		C3E55CF52160F8B500779352 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C3E55CF72160F8D900779352 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C3E55CF82160F8D900779352 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		C3EF3A1A216A5B4F00D2AA0B /* MenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
+		C3EF3A1B216A5B4F00D2AA0B /* MenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
+		C3EF3A1C216A5B4F00D2AA0B /* MenuController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuController.xib; sourceTree = "<group>"; };
+		C3EF3A20216A73A300D2AA0B /* MenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		C3EF3A21216A73A300D2AA0B /* MenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		C3EF3A22216A73A300D2AA0B /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +138,7 @@
 		C37546D42168E07800C716BE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3EF3A19216A5A9B00D2AA0B /* Menu */,
 				C37546D52168E09400C716BE /* DefaultController.h */,
 				C37546D62168E09400C716BE /* DefaultController.m */,
 				C37546D82168E28F00C716BE /* DefaultCollectionController.h */,
@@ -273,6 +284,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C3EF3A19216A5A9B00D2AA0B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C3EF3A1F216A738800D2AA0B /* Cell */,
+				C3EF3A1A216A5B4F00D2AA0B /* MenuController.h */,
+				C3EF3A1B216A5B4F00D2AA0B /* MenuController.m */,
+				C3EF3A1C216A5B4F00D2AA0B /* MenuController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		C3EF3A1F216A738800D2AA0B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3EF3A20216A73A300D2AA0B /* MenuCell.h */,
+				C3EF3A21216A73A300D2AA0B /* MenuCell.m */,
+				C3EF3A22216A73A300D2AA0B /* MenuCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,7 +362,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3EF3A1E216A5B4F00D2AA0B /* MenuController.xib in Resources */,
 				C3E55CF32160F22100779352 /* CategoryCell.xib in Resources */,
+				C3EF3A24216A73A300D2AA0B /* MenuCell.xib in Resources */,
 				C3E55CEC2160EBEE00779352 /* VCCategories.xib in Resources */,
 				C38BC2792160C64F00E9D7D6 /* LaunchScreen.storyboard in Resources */,
 				C38BC2892160C7E700E9D7D6 /* VCUserAuthorization.xib in Resources */,
@@ -347,6 +381,7 @@
 			files = (
 				C38BC27C2160C64F00E9D7D6 /* main.m in Sources */,
 				C38BC26E2160C64F00E9D7D6 /* AppDelegate.m in Sources */,
+				C3EF3A1D216A5B4F00D2AA0B /* MenuController.m in Sources */,
 				C3E55CE52160E84000779352 /* Settings.m in Sources */,
 				C37546DA2168E28F00C716BE /* DefaultCollectionController.m in Sources */,
 				C37546D72168E09400C716BE /* DefaultController.m in Sources */,
@@ -358,6 +393,7 @@
 				C34DF89F216139BC000D775C /* Category.m in Sources */,
 				C38BC2882160C7E700E9D7D6 /* VCUserAuthorization.m in Sources */,
 				C3E55CF22160F22100779352 /* CategoryCell.m in Sources */,
+				C3EF3A23216A73A300D2AA0B /* MenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
