@@ -6,8 +6,8 @@
 //  Copyright © 2018 Ilya Zimonin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DefaultController.h"
 
-@interface VCUserAuthorization : UIViewController
+@interface VCUserAuthorization : DefaultController
 
 @end

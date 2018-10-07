@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collection;
 @property (strong, nonatomic) CategoriesService *service;
 @property (strong, nonatomic) NSMutableArray *categories;
-@property (strong, nonatomic) NSArray<UIColor *> *colors;
+@property (strong, nonatomic) NSArray<UIColor *> *colorsArray;
 
 @end
 
@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.collection.delegate = self;
     self.collection.dataSource = self;
     [self.collection registerNib:[UINib nibWithNibName:@"CategoryCell" bundle:nil] forCellWithReuseIdentifier:@"CategoryCell"];
@@ -38,7 +39,7 @@
 }
 
 -(void)initColors {
-    self.colors = @[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0],
+    self.colorsArray = @[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0],
                     [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0],
                     [UIColor colorWithRed:1.0 green:0.0 blue:1.0 alpha:1.0],
                     [UIColor colorWithRed:1.0 green:1.0 blue:0.0 alpha:1.0],
@@ -54,7 +55,7 @@
     CategoryCell *cell = [self.collection dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
     Category *category = self.categories[indexPath.row];
     cell.labelName.text = category.name;
-    cell.viewColor.backgroundColor = self.colors[indexPath.row % 8];
+    cell.viewColor.backgroundColor = self.colorsArray[indexPath.row % 8];
     return cell;
 }
 

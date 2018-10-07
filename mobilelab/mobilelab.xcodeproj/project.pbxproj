@@ -10,6 +10,8 @@
 		C34DF89B216136C3000D775C /* CategoriesService.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF89A216136C3000D775C /* CategoriesService.m */; };
 		C34DF89F216139BC000D775C /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF89E216139BC000D775C /* Category.m */; };
 		C34DF8A421614958000D775C /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = C34DF8A321614958000D775C /* Colors.m */; };
+		C37546D72168E09400C716BE /* DefaultController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37546D62168E09400C716BE /* DefaultController.m */; };
+		C37546DA2168E28F00C716BE /* DefaultCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37546D92168E28F00C716BE /* DefaultCollectionController.m */; };
 		C38BC26E2160C64F00E9D7D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC26D2160C64F00E9D7D6 /* AppDelegate.m */; };
 		C38BC2762160C64F00E9D7D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2752160C64F00E9D7D6 /* Assets.xcassets */; };
 		C38BC2792160C64F00E9D7D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38BC2772160C64F00E9D7D6 /* LaunchScreen.storyboard */; };
@@ -34,7 +36,10 @@
 		C34DF89E216139BC000D775C /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		C34DF8A221614958000D775C /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		C34DF8A321614958000D775C /* Colors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
-		C34DF8A62161498B000D775C /* Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		C37546D52168E09400C716BE /* DefaultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultController.h; sourceTree = "<group>"; };
+		C37546D62168E09400C716BE /* DefaultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultController.m; sourceTree = "<group>"; };
+		C37546D82168E28F00C716BE /* DefaultCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultCollectionController.h; sourceTree = "<group>"; };
+		C37546D92168E28F00C716BE /* DefaultCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultCollectionController.m; sourceTree = "<group>"; };
 		C38BC2692160C64F00E9D7D6 /* mobilelab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobilelab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38BC26C2160C64F00E9D7D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C38BC26D2160C64F00E9D7D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,22 +98,42 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C34DF8A02161490E000D775C /* Interface */ = {
+		C34DF8A02161490E000D775C /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				C34DF8A121614948000D775C /* Colors */,
-				C34DF8A62161498B000D775C /* Theme.h */,
+				C38BC28E2160CF5E00E9D7D6 /* Categories */,
+				C37546D42168E07800C716BE /* Controllers */,
+				C34DF8A121614948000D775C /* Interface */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		C34DF8A121614948000D775C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C37546D32168E06C00C716BE /* Colors */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
 		};
-		C34DF8A121614948000D775C /* Colors */ = {
+		C37546D32168E06C00C716BE /* Colors */ = {
 			isa = PBXGroup;
 			children = (
 				C34DF8A221614958000D775C /* Colors.h */,
 				C34DF8A321614958000D775C /* Colors.m */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		C37546D42168E07800C716BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C37546D52168E09400C716BE /* DefaultController.h */,
+				C37546D62168E09400C716BE /* DefaultController.m */,
+				C37546D82168E28F00C716BE /* DefaultCollectionController.h */,
+				C37546D92168E28F00C716BE /* DefaultCollectionController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C38BC2602160C64F00E9D7D6 = {
@@ -131,9 +156,8 @@
 		C38BC26B2160C64F00E9D7D6 /* mobilelab */ = {
 			isa = PBXGroup;
 			children = (
-				C34DF8A02161490E000D775C /* Interface */,
+				C34DF8A02161490E000D775C /* Project */,
 				C3E55CE62160E9EF00779352 /* ContentCategories */,
-				C38BC28E2160CF5E00E9D7D6 /* Categories */,
 				C38BC2832160C77500E9D7D6 /* UserAuthorization */,
 				C38BC2822160C6AE00E9D7D6 /* AppDelegate */,
 				C38BC2752160C64F00E9D7D6 /* Assets.xcassets */,
@@ -324,6 +348,8 @@
 				C38BC27C2160C64F00E9D7D6 /* main.m in Sources */,
 				C38BC26E2160C64F00E9D7D6 /* AppDelegate.m in Sources */,
 				C3E55CE52160E84000779352 /* Settings.m in Sources */,
+				C37546DA2168E28F00C716BE /* DefaultCollectionController.m in Sources */,
+				C37546D72168E09400C716BE /* DefaultController.m in Sources */,
 				C3E55CEB2160EBEE00779352 /* VCCategories.m in Sources */,
 				C38BC2922160CF8D00E9D7D6 /* NSString+MD5.m in Sources */,
 				C38BC28D2160CD0E00E9D7D6 /* UserAuthorizationService.m in Sources */,

@@ -13,6 +13,4 @@
 
 @property (nonatomic, strong, readonly) UIColor *navigationBackground;
 
-+(instancetype)sharedInstance;
-
 @end

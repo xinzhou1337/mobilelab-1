@@ -12,15 +12,6 @@
 
 @synthesize navigationBackground = _navigationBackground;
 
-+(instancetype)sharedInstance {
-    static Colors *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[Colors alloc] init];
-    });
-    return sharedInstance;
-}
-
 -(instancetype)init {
     self = [super init];
     if (self) {

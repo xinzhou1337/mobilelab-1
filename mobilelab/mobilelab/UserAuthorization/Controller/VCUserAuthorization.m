@@ -12,7 +12,6 @@
 #import "VCCategories.h"
 
 #import "NSString+MD5.h"
-#import "Theme.h"
 
 #define hintEmptyField @"Поле не может быть пустым"
 #define hintPasswordsNotEqual @"Пароли не совпадают"
@@ -35,11 +34,15 @@
 
 @implementation VCUserAuthorization
 
+-(void)initController {
+    [super initController];
+    self.service = [UserAuthorizationService new];
+    self.authorizationScreen = [self.service userDataExists];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.service = [UserAuthorizationService new];
-    
-    self.authorizationScreen = [self.service userDataExists];
+
     if (self.authorizationScreen) {
         self.labelRepeatPassword.hidden = YES;
         self.textFieldRepeatPassword.hidden = YES;
@@ -95,7 +98,7 @@
     settings.pathToDatabase = [self.service pathToDatabase];
     VCCategories *vc = [VCCategories new];
     self.navigation = [UINavigationController new];
-    self.navigation.navigationBar.barTintColor = Colors.navigationBackground;
+    self.navigation.navigationBar.barTintColor = self.colors.navigationBackground;
     [self.navigation setViewControllers:@[vc]];
     [self presentViewController:self.navigation animated:NO completion:nil];
 }
