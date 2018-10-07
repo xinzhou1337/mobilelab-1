@@ -11,9 +11,8 @@
 #import "CategoriesService.h"
 #import "Category.h"
 
-@interface VCCategories () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface VCCategories ()
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collection;
 @property (strong, nonatomic) CategoriesService *service;
 @property (strong, nonatomic) NSMutableArray *categories;
 @property (strong, nonatomic) NSArray<UIColor *> *colorsArray;
@@ -22,12 +21,8 @@
 
 @implementation VCCategories
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.collection.delegate = self;
-    self.collection.dataSource = self;
-    [self.collection registerNib:[UINib nibWithNibName:@"CategoryCell" bundle:nil] forCellWithReuseIdentifier:@"CategoryCell"];
+-(void)initController {
+    [super initController];
     
     self.service = [CategoriesService new];
     [self.service getCategoriesFromDB:^(NSMutableArray *categories) {
@@ -36,6 +31,16 @@
         [categories sortUsingDescriptors:@[sortDescriptor]];
     }];
     [self initColors];
+    
+    self.minRowWidth = 200;
+    self.maxRowWidth = 400;
+    self.rowHeight = 60;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self registerNib:[UINib nibWithNibName:@"CategoryCell" bundle:nil] forCellWithReuseIdentifier:@"CategoryCell"];
 }
 
 -(void)initColors {
@@ -55,7 +60,12 @@
     CategoryCell *cell = [self.collection dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
     Category *category = self.categories[indexPath.row];
     cell.labelName.text = category.name;
-    cell.viewColor.backgroundColor = self.colorsArray[indexPath.row % 8];
+    if (indexPath.row < 2) {
+        cell.viewColor.backgroundColor = UIColor.grayColor;
+    } else {
+        cell.viewColor.backgroundColor = self.colorsArray[indexPath.row % 8];
+    }
+    
     return cell;
 }
 
@@ -65,37 +75,6 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    
-}
-
-#pragma mark Delegate
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = [self.view bounds].size.width;
-    return CGSizeMake(width / 2.0, 80);
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(8, 0, 8, 0);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(0, 0);
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
-    return CGSizeMake(0, 0);
 }
 
 @end

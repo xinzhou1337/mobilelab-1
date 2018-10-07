@@ -15,6 +15,8 @@
 @property (nonatomic, assign) CGFloat minRowWidth;
 @property (nonatomic, assign) CGFloat maxRowWidth;
 
+@property (nonatomic, strong) UICollectionView *collection;
+
 -(void)registerNib:(nullable UINib *)nib forCellWithReuseIdentifier:(nonnull NSString*)reuseId;
 
 @end

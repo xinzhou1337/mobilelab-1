@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KB3-fv-jT3">
-                        <rect key="frame" x="8" y="4" width="272" height="145"/>
+                        <rect key="frame" x="4" y="4" width="280" height="145"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-m5-2M0">
-                                <rect key="frame" x="0.0" y="0.0" width="272" height="145"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="145"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,10 +41,10 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="KB3-fv-jT3" secondAttribute="trailing" constant="8" id="CO1-Nh-Rhk"/>
+                <constraint firstAttribute="trailing" secondItem="KB3-fv-jT3" secondAttribute="trailing" constant="4" id="CO1-Nh-Rhk"/>
                 <constraint firstAttribute="bottom" secondItem="KB3-fv-jT3" secondAttribute="bottom" constant="4" id="djA-BW-wYI"/>
                 <constraint firstItem="KB3-fv-jT3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="o7e-no-ykc"/>
-                <constraint firstItem="KB3-fv-jT3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="tPc-1w-KjW"/>
+                <constraint firstItem="KB3-fv-jT3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="tPc-1w-KjW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="288" height="153"/>

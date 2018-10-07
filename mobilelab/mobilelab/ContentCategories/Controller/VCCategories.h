@@ -6,8 +6,8 @@
 //  Copyright © 2018 Ilya Zimonin. All rights reserved.
 //
 
-#import "DefaultController.h"
+#import "DefaultCollectionController.h"
 
-@interface VCCategories : DefaultController
+@interface VCCategories : DefaultCollectionController
 
 @end

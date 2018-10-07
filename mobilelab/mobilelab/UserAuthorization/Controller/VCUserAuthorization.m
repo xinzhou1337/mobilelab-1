@@ -98,9 +98,9 @@
     settings.pathToDatabase = [self.service pathToDatabase];
     VCCategories *vc = [VCCategories new];
     self.navigation = [UINavigationController new];
-    self.navigation.navigationBar.barTintColor = self.colors.navigationBackground;
     [self.navigation setViewControllers:@[vc]];
-    [self presentViewController:self.navigation animated:NO completion:nil];
+    self.navigation.navigationBar.barTintColor = self.colors.navigationBackground;
+    [self presentViewController:self.navigation animated:YES completion:nil];
 }
 
 -(BOOL)isPasswordCorrect {

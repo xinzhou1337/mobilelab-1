@@ -12,7 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UIView *viewForCollection;
 
-@property (nonatomic, strong) UICollectionView *collection;
 
 @end
 
@@ -23,22 +22,25 @@
     self.minColumnCount = 1;
     self.minRowWidth = 999999;
     self.maxRowWidth = 999999;
-    UICollectionView *collection = [UICollectionView new];
-    collection.collectionViewLayout = [UICollectionViewFlowLayout new];
-    collection.dataSource = self;
-    collection.delegate = self;
-    self.collection = collection;
+}
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UIView *parentView = self.viewForCollection ?: self.view;
+    
+    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+    self.collection = [[UICollectionView alloc] initWithFrame:parentView.bounds collectionViewLayout:layout];
+    self.collection.backgroundColor = UIColor.clearColor;
+    self.collection.dataSource = self;
+    self.collection.delegate = self;
+    [parentView addSubview:self.collection];
+    self.collection.autoresizingMask = 34;
 }
 
 -(void)registerNib:(nullable UINib *)nib forCellWithReuseIdentifier:(nonnull NSString*)reuseId {
     [self.collection registerNib:nib forCellWithReuseIdentifier:reuseId];
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-#pragma mark - UICollectionViewDataSource
 
 
 
@@ -72,6 +74,13 @@
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     return CGSizeMake(0, 0);
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    __weak typeof(self) weakSelf = self;
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+         [weakSelf.collection.collectionViewLayout invalidateLayout];
+     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context){}];
 }
 
 

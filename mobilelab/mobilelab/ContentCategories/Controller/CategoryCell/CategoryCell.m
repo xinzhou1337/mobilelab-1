@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.viewColor.layer.cornerRadius = 5;
+    self.viewColor.layer.masksToBounds = YES;
 }
 
 @end

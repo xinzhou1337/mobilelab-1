@@ -14,11 +14,6 @@
 
 @implementation DefaultController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.colors = [Colors new];
-}
-
 -(instancetype)init {
     self = [super init];
     if (self) {
@@ -44,7 +39,7 @@
 }
 
 -(void)initController {
-    
+    self.colors = [Colors new];
 }
 
 @end
