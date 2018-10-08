@@ -49,7 +49,7 @@
     [super viewDidLoad];
     
     if (self.navigationItem) {
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuBarButton"] style:UIBarButtonItemStylePlain target:self action:@selector(onMenuClick)];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuBarItem"] style:UIBarButtonItemStylePlain target:self action:@selector(onMenuClick)];
         self.navigationItem.rightBarButtonItem = item;
         
         self.menuController = [[MenuController alloc] init];
